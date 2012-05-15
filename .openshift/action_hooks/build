@@ -7,8 +7,10 @@
 CEYLON_HOME="${OPENSHIFT_REPO_DIR}.openshift/ceylon/"
 CEYLON_REPO="${OPENSHIFT_RUNTIME_DIR}.ceylon-repo"
 
-srcFiles=`find "${OPENSHIFT_REPO_DIR}/src/main/ceylon/" -type f -name "*.ceylon" -print`
+ceyonSrc="${OPENSHIFT_REPO_DIR}/src/main/ceylon/"
+
+srcFiles=`find "${ceyonSrc}" -type f -name "*.ceylon" -print`
 srcFilesInLine=`echo $srcFiles | tr '\n' ' '`
 
-${CEYLON_HOME}bin/ceylonc ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
+${CEYLON_HOME}bin/ceylonc -src ${ceyonSrc} ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
 
