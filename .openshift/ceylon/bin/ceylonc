@@ -20,7 +20,7 @@ then
     CEYLON_HOME="$DIR/.."
 fi
 
-. $DIR/ceylon_args.sh
+. $DIR/args.sh
 
 # JAVA_CP are classes required by the compiler to run. They have to go to the boot class path on Mac OS X
 # so just put it there for all (Linux) OSes for consistency.
