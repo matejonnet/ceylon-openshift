@@ -6,6 +6,8 @@
 #OPENSHIFT_REPO_DIR="."
 
 CEYLON_HOME="${OPENSHIFT_REPO_DIR}.openshift/ceylon/"
+CEYLON_REPO="${OPENSHIFT_RUNTIME_DIR}.ceylon-repo
+
 
 srcFiles=`find "${OPENSHIFT_REPO_DIR}/src/main/ceylon/" -type f -name "*.ceylon" -print`
 srcFilesInLine=`echo $srcFiles | tr '\n' ' '`
