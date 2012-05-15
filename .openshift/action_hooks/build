@@ -18,5 +18,5 @@ then
 	mkdir $CEYLON_REPO
 fi
 
-${CEYLON_HOME}bin/ceylonc -src ${ceyonSrc} -rep ${CEYLON_REPO} ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
+${CEYLON_HOME}bin/ceylonc -src ${ceyonSrc} -rep ${CEYLON_REPO} -out ${CEYLON_REPO} ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
 
