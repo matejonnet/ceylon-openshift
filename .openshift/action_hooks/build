@@ -3,3 +3,12 @@
 # available.  Otherwise it will execute while your application is stopped
 # before the deploy step.  This script gets executed directly, so it
 # could be python, php, ruby, etc.
+#OPENSHIFT_REPO_DIR="."
+
+CEYLON_HOME="${OPENSHIFT_REPO_DIR}.openshift/ceylon"
+
+srcFiles=`find "${OPENSHIFT_REPO_DIR}/src/main/ceylon/" -type f -name "*.ceylon" -print`
+srcFilesInLine=`echo $srcFiles | tr '\n' ' '`
+
+./ceylonc $srcFilesInLine
+#echo "result: $srcFilesInLine"
