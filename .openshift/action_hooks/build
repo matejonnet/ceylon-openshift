@@ -12,5 +12,11 @@ ceyonSrc="${OPENSHIFT_REPO_DIR}/src/main/ceylon/"
 srcFiles=`find "${ceyonSrc}" -type f -name "*.ceylon" -print`
 srcFilesInLine=`echo $srcFiles | tr '\n' ' '`
 
+#create repo dir
+if test \! -d "$CEYLON_REPO"
+then
+	mkdir $CEYLON_REPO
+fi
+
 ${CEYLON_HOME}bin/ceylonc -src ${ceyonSrc} -rep ${CEYLON_REPO} ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
 
