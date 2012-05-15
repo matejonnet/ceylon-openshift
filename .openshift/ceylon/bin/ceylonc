@@ -52,5 +52,6 @@ java \
     "-Dceylon.home=$CEYLON_HOME" \
     com.redhat.ceylon.compiler.java.Main \
     -classpath "$COMPILE_CP" \
+    -Dceylon.repo=${CEYLON_REPO} \
     $ARGS
 
