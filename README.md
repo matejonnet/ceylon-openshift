@@ -8,36 +8,36 @@ Follow this instructions to run [Ceylon](http://ceylon-lang.org/) applications o
 
 1. Create JBoss AS applications:
 
-    rhc app create -t jbossas-7 -a myceylonapp
+        rhc app create -t jbossas-7 -a myceylonapp
 
 1. Optionaly you can remove OpenShift sample applications
 
-    cd myceylonapp
-    rm -r src/main/webapp/*
+        cd myceylonapp
+        rm -r src/main/webapp/*
     
 1. Use files from this github repo to add Ceylon runtime and required modules to JBoss AS.
 Avoiding conflicts specify git options to prefer this repo content. 
 
-    cd myceylonapp (if you are not here yet)
-    git remote add ceylon-openshift https://github.com/matejonnet/ceylon-openshift
-    git pull -s recursive -X theirs ceylon-openshift master
+        cd myceylonapp (if you are not here yet)
+        git remote add ceylon-openshift https://github.com/matejonnet/ceylon-openshift
+        git pull -s recursive -X theirs ceylon-openshift master
 
 1. Push everithing to OpenShift:
 
-    git push origin master
-    
-1. See the demo application in web browser \<your app name\>-\<your domain name\>.rhcloud.com
+        git push origin master
+
+1. See a demo application in a web browser at \<your app name\>-\<your domain name\>.rhcloud.com.
 
 1. Try to modify demo application *src/main/ceylon/org/jboss/ceylon/demo/servlet/Run.ceylon.*
 
 After code changes do a git commit and push to OpenShift:
 
-    git commit -a -m"My changes to sample."
-    git push origin master
+        git commit -a -m"My changes to sample."
+        git push origin master
    
-Run.ceylon is an entry point for all request to your application. It must implement service method: 
+Run.ceylon is an entry point for all request to your application, it must implement service method: 
 
-    shared void service(HttpServletRequest req, HttpServletResponse resp) 
+        shared void service(HttpServletRequest req, HttpServletResponse resp) 
 
 If you rename entry class or move it to different package, 
 you need to update configuration to point to your class.
