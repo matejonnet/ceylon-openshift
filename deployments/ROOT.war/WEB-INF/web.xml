@@ -11,7 +11,15 @@
         <servlet-name>CeylonServlet</servlet-name>
         <servlet-class>com.redhat.ceylon.servlet.CeylonServlet</servlet-class>
         <init-param>
-            <param-name>ceylon-repository</param-name>
+            <param-name>ceylon-main-module</param-name>
+            <param-value>${ceylon-main-module}</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ceylon-main-runnable</param-name>
+            <param-value>${ceylon-main-runnable}</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ceylon-runtime-repository</param-name>
             <param-value>${env.OPENSHIFT_REPO_DIR}.openshift/ceylon/repo/</param-value>
         </init-param>
         <init-param>
