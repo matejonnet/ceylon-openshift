@@ -31,12 +31,13 @@ After code changes do a git commit and push to OpenShift:
     git commit -a -m"My changes to sample."
     git push origin master
    
-Run.ceylon is the entry point for all request to your application. It must implement service method: 
+Run.ceylon is an entry point for all request to your application. It must implement service method: 
 
     shared void service(HttpServletRequest req, HttpServletResponse resp) 
 
-If you rename entry class it or move it to different package, 
-you need to update configuration to point to your class. 
+If you rename entry class or move it to different package, 
+you need to update configuration to point to your class.
+
 Entry point configuration *ceylon-main-module* and *ceylon-main-runnable* is located in *standalone.xml* under *.openshift/config*   
 
 *Note! Servlet implmentatin is experimental and can be changed or even removed in the future.*
