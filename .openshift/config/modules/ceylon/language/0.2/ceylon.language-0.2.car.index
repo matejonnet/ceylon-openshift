@@ -1,0 +1,12 @@
+ceylon/language
+
+com
+com/redhat/ceylon/compiler
+ceylon/language/descriptor
+com/redhat/ceylon/compiler/java/language
+com/redhat/ceylon/compiler/java
+ceylon
+com/redhat
+com/redhat/ceylon/compiler/java/metadata
+com/redhat/ceylon
+META-INF

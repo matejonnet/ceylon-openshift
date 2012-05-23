@@ -5,7 +5,8 @@
 # could be python, php, ruby, etc.
 
 CEYLON_HOME="${OPENSHIFT_REPO_DIR}.openshift/ceylon/"
-CEYLON_REPO="${OPENSHIFT_RUNTIME_DIR}.ceylon-repo"
+CEYLON_REPO="${OPENSHIFT_RUNTIME_DIR}ceylon-repo/"
+CEYLON_RUNTIME_REPO="${OPENSHIFT_REPO_DIR}.openshift/ceylon/repo/"
 
 ceyonSrc="${OPENSHIFT_REPO_DIR}/src/main/ceylon/"
 
@@ -18,5 +19,10 @@ then
 	mkdir $CEYLON_REPO
 fi
 
-${CEYLON_HOME}bin/ceylonc -src ${ceyonSrc} -rep ${CEYLON_REPO} -out ${CEYLON_REPO} ${srcFilesInLine} > ${OPENSHIFT_LOG_DIR}ceyon-build.log
+if test \! -d "$CEYLON_RUNTIME_REPO"
+then
+	mkdir $CEYLON_RUNTIME_REPO
+fi
+
+${CEYLON_HOME}bin/ceylonc -target 1.6 -source 1.6 -src ${ceyonSrc} -rep ${CEYLON_RUNTIME_REPO} -out ${CEYLON_RUNTIME_REPO} ${srcFilesInLine}
 

@@ -1,0 +1,13 @@
+
+ceylon/modules/jboss/repository
+ceylon/modules/api/runtime
+ceylon/modules/spi
+ceylon/modules/jboss
+META-INF
+ceylon/modules/spi/runtime
+ceylon/modules
+ceylon/modules/api/util
+ceylon/modules/api
+ceylon/modules/api/compiler
+ceylon
+ceylon/modules/jboss/runtime
