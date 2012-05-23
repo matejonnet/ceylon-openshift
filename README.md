@@ -2,29 +2,33 @@
 
 Follow this instructions to run [Ceylon](http://ceylon-lang.org/) applications on OpenShift PaaS.
 
-* [Register](https://openshift.redhat.com/app/account/new) for OpenShift
-* Follow the [instructions](https://openshift.redhat.com/app/getting_started) to install client tools (step one)
-* Create a domain (step two on the link above)
+1. [Register](https://openshift.redhat.com/app/account/new) for OpenShift
+1. Follow the [instructions](https://openshift.redhat.com/app/getting_started) to install client tools (step one)
+1. Create a domain (step two on the link above)
 
-Create JBoss AS applications:
+1. Create JBoss AS applications:
 
     rhc app create -t jbossas-7 -a myceylonapp
-    
-Use files from this github repo to add Ceylon runtime and required modules to JBoss AS.
-Avoiding conflicts specify git options to prefer this repo content. 
+
+1. Optionaly you can remove OpenShift sample applications
 
     cd myceylonapp
+    rm -r src/main/webapp/*
+    
+1. Use files from this github repo to add Ceylon runtime and required modules to JBoss AS.
+Avoiding conflicts specify git options to prefer this repo content. 
+
+    cd myceylonapp (if you are not here yet)
     git remote add ceylon-openshift https://github.com/matejonnet/ceylon-openshift
     git pull -s recursive -X theirs ceylon-openshift master
-    //TODO clean jboss as sample app
 
-Push everithing to OpenShift:
+1. Push everithing to OpenShift:
 
     git push origin master
     
-See the demo application in web browser \<your app name\>-\<your domain name\>.rhcloud.com
+1. See the demo application in web browser \<your app name\>-\<your domain name\>.rhcloud.com
 
-Try to modify demo application *src/main/ceylon/org/jboss/ceylon/demo/servlet/Run.ceylon.*
+1. Try to modify demo application *src/main/ceylon/org/jboss/ceylon/demo/servlet/Run.ceylon.*
 
 After code changes do a git commit and push to OpenShift:
 
