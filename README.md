@@ -40,4 +40,4 @@ you need to update configuration to point to your class.
 
 Entry point configuration *ceylon-main-module* and *ceylon-main-runnable* is located in *standalone.xml* under *.openshift/config*   
 
-*Note! Servlet implmentatin is experimental and can be changed or even removed in the future.*
+*Note! Servlet implmentation is experimental and can be changed or even removed in the future.*
