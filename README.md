@@ -1,3 +1,11 @@
+
+Deprecated, use
+https://github.com/matejonnet/openshift-cartridge-ceylon
+
+
+----
+
+
 # Running Ceylon on OpenShift
 
 Follow this instructions to run [Ceylon](http://ceylon-lang.org/) applications on OpenShift PaaS.
